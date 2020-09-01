@@ -1,4 +1,5 @@
 name: Build Combined List
+on: push
 # This workflow is triggered on pushes to the repository.
 workflow_dispatch:
     inputs:
