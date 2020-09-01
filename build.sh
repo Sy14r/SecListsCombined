@@ -4,6 +4,7 @@ START_DIR=$PWD
 git clone https://github.com/praetorian-code/Hob0Rules.git
 cd ./Hob0Rules/wordlists
 gunzip *.gz
+
 cd $START_DIR
 git clone https://github.com/sy14r/SecListsCombined.git 2>/dev/null
 git clone https://github.com/danielmiessler/SecLists.git
