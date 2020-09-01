@@ -17,8 +17,7 @@ cp $START_DIR/Hob0Rules/wordlists/english.txt ./english.txt
 # Need to keep the ./SecLists/Passwords/ dir struct in the final repo so that we can calculate stats properly
 # Need to add COMBINED-PASS.txt to the root of the repo
 cd $START_DIR
-git clone https://github.com/sy14r/SecListsCombined.git
-rm -rf ./SecListsCombined/*
+git clone https://github.com/sy14r/SecListsCombined.git 2>/dev/null
 cat \\$(find . -iname "*.txt") | uniq -u > $START_DIR/SecListsCombined/COMBINED-PASS.txt 
 mv $START_DIR/SecLists/Passwords/ $START_DIR/SecListsCombined/
 
