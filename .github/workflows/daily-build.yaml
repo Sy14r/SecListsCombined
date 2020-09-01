@@ -11,12 +11,17 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2 # Checkout the repository
-        - uses: actions-go/push@master # Commit the repo back
-            with:
-                commit-message: '[Auto] update combined list'
-                remote: origin
         - run: |
             cd ..
             chmod +x SecListsCombined/build.sh
-            ./SecListsCombined/build.sh        
+            ./SecListsCombined/build.sh       
+        - name: Commit files
+            run: |
+              git config --local user.email "action@github.com"
+              git config --local user.name "GitHub Action"
+              git commit -m "[Auto] update combined list" -a
+        - name: Push changes
+            uses: ad-m/github-push-action@master
+            with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
         
