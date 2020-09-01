@@ -11,6 +11,7 @@ jobs:
             chmod +x SecListsCombined/build.sh
             ./SecListsCombined/build.sh       
         - run: |
+            which strings
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             git add *
