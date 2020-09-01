@@ -26,3 +26,6 @@ cat $(find . -iname "*.txt") | uniq -u > $START_DIR/SecListsCombined/COMBINED-PA
 mv $START_DIR/SecLists/Passwords/ $START_DIR/SecListsCombined/
 
 # At this point SecListsCombined should have the cleaned up info for stat calcs as well as the COMBINED-PASS list
+cat $START_DIR/SecListsCombined/COMBINED-PASS.txt | strings | sort | uniq > $START_DIR/SecListsCombined/COMBINED-PASS.txt.uniq
+# We're being extra sure to be uniq here...
+mv $START_DIR/SecListsCombined/COMBINED-PASS.txt.uniq $START_DIR/SecListsCombined/COMBINED-PASS.txt
