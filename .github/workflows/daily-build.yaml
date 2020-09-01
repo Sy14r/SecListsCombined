@@ -11,11 +11,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2 # Checkout the repository
-        - run: |
-            cd ..
-            chmod +x SecListsCombined/build.sh
-            ./SecListsCombined/build.sh        
         - uses: actions-go/push@master # Commit the repo back
             with:
                 commit-message: '[Auto] update combined list'
                 remote: origin
+        - run: |
+            cd ..
+            chmod +x SecListsCombined/build.sh
+            ./SecListsCombined/build.sh        
+        
