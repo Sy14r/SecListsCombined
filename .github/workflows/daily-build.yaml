@@ -15,11 +15,10 @@ jobs:
             cd ..
             chmod +x SecListsCombined/build.sh
             ./SecListsCombined/build.sh       
-        - name: Commit files
-            run: |
-              git config --local user.email "action@github.com"
-              git config --local user.name "GitHub Action"
-              git commit -m "[Auto] update combined list" -a
+        - run: |
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git commit -m "[Auto] update combined list" -a
         - name: Push changes
             uses: ad-m/github-push-action@master
             with:
