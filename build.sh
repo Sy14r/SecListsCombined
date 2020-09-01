@@ -6,7 +6,6 @@ cd ./Hob0Rules/wordlists
 gunzip *.gz
 
 cd $START_DIR
-git clone https://github.com/sy14r/SecListsCombined.git 2>/dev/null
 git clone https://github.com/danielmiessler/SecLists.git
 cd $START_DIR/SecLists/Passwords
 rm -f ./Leaked-Databases/rockyou*
@@ -29,3 +28,4 @@ mv $START_DIR/SecLists/Passwords/ $START_DIR/SecListsCombined/
 cat $START_DIR/SecListsCombined/COMBINED-PASS.txt | strings | sort | uniq > $START_DIR/SecListsCombined/COMBINED-PASS.txt.uniq
 # We're being extra sure to be uniq here...
 mv $START_DIR/SecListsCombined/COMBINED-PASS.txt.uniq $START_DIR/SecListsCombined/COMBINED-PASS.txt
+cd $START_DIR/SecListsCombined

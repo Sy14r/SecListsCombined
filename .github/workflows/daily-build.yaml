@@ -1,0 +1,21 @@
+name: Build Combined List
+# This workflow is triggered on pushes to the repository.
+workflow_dispatch:
+    inputs:
+      run:
+        description: 'just a thing'
+        required: false
+
+jobs:
+    build_list:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2 # Checkout the repository
+        - run: |
+            cd ..
+            chmod +x SecListsCombined/build.sh
+            ./SecListsCombined/build.sh        
+        - uses: actions-go/push@master # Commit the repo back
+            with:
+                commit-message: '[Auto] update combined list'
+                remote: origin
