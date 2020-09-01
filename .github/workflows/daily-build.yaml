@@ -7,12 +7,10 @@ jobs:
         steps:
         - uses: actions/checkout@v2 # Checkout the repository
         - run: |
-            apt update && apt upgrade -y && apt install -y binutils
             cd ..
             chmod +x SecListsCombined/build.sh
             ./SecListsCombined/build.sh       
         - run: |
-            cd ./SecListsCombined
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             git add *
