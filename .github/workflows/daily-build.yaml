@@ -20,9 +20,9 @@ jobs:
             git config --local user.name "GitHub Action"
             git commit -m "[Auto] update combined list" -a
         - name: GitHub Push
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: 'main'
-            directory: .
+            uses: ad-m/github-push-action@v0.6.0
+            with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                branch: 'main'
+                directory: .
         
