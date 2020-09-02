@@ -1,5 +1,7 @@
 name: Build Combined List
-on: push
+on:
+    schedule:
+        - cron: '0 0 1 * *'
 
 jobs:
     build_list:
