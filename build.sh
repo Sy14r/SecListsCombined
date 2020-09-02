@@ -29,3 +29,4 @@ cat $START_DIR/SecListsCombined/COMBINED-PASS.txt | strings | sort | uniq > $STA
 # We're being extra sure to be uniq here...
 mv $START_DIR/SecListsCombined/COMBINED-PASS.txt.uniq $START_DIR/SecListsCombined/COMBINED-PASS.txt
 cd $START_DIR/SecListsCombined
+zip -r PASSWORDS.zip Passwords/ COMBINED-PASS.txt
